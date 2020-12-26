@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link type="text/css" th:href="@{/css/css.css}" rel="stylesheet" />
+    <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/js/js.js}"></script>
+    <script th:src="@{/js/wb.js}" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}">
+    <script type="text/javascript" th:src="@{/layui/layui.js}"></script>
+    <title>注册页面</title>
+</head>
+<body class="layui-card-body layui-card">
+<div style="display: flex;">
+    <div style="margin-top:20px;margin-left: 8%"><img th:src="@{/images/re.jpg}" ><br><br><br>
+        <img th:src="@{/images/bl3.jpg}" style="margin-left: 16%"><br>
+
+    </div>
+    <div style="display: flex;margin-top: 14%;margin-left: 6%"><img th:src="@{/images/bl.jpg}" ></div>
+    <div>
+        <div style="display: flex; justify-content: center; position: absolute;top:32%;left:54%;border: rgba(101,96,91,0.11) 1px;box-shadow: 0 0 10px rgba(101,96,91,0.38);height: 400px">
+            <div style="padding-top: 5px;">
+
+                <form class="layui-form" th:action="@{/pages/front/doregist}" method="post">
+                    <div class="layui-form-item">
+                        <div class="layui-inline" style="top: 60px;">
+                            <label class="layui-form-label">用户昵称</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="name"  autocomplete="off" class="layui-input" placeholder="请输入昵称">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-inline" style="top: 80px;">
+                            <label class="layui-form-label">用户账号 </label>
+                            <div class="layui-input-inline">
+                                <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input" placeholder="请输入手机号" >
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="margin-top: 100px;">
+                            <label class="layui-form-label">登录密码</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux" ><span>请务必输入用户名</span></div>
+                            <br>
+                            <div style="padding-top: 10%;padding-left: 40px;color: #F34743">[[${erroMsg}]]</div>
+
+                        </div>
+                        <div class="layui-form-item" style="padding-top: 20px;">
+                            <div class="layui-input-block">
+                                <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                </form></div>
+        </div>
+    </div>
+
+</div>
+</body>
+
+</html>
